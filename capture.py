@@ -29,7 +29,7 @@ try:
                 cv2.imwrite(file_name, frame)
                 print(f"Zdjecie z kamery {i} zapisane: {file_name}")
 
-        time.sleep(20)  # Czekaj 3 minuty
+        time.sleep(180)  # Czekaj 3 minuty
 
 finally:
     # Zwolnienie kamer i zamkniecie okna OpenCV
