@@ -1,5 +1,6 @@
 #!/usr/bin/bash
 
+mkdir -p ./archive
 cp -r ./camera_* ./archive/
 rm -rf ./camera_*
 
