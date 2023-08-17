@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Variables
+name="Studio"
+
+# Check if already exists
+tmux has-session -t $name
+
+if [ $? == 0 ]
+then
+    echo "$name already exists"
+    exit 0
+fi
+
+# Create Main
+tmux new-session -s $name -n main -d
+tmux split-window -t $name:0.0
+tmux split-window -h -t $name:0.0
+
+tmux send-keys -t $name:0.0 'mkdir -p ./cameras' C-m
+tmux send-keys -t $name:0.0 'sudo mount /dev/sda1 ./cameras' C-m
+
+tmux send-keys -t $name:0.1 'cd ./cameras' C-m
+tmux send-keys -t $name:0.1 'python3 -m http.server' C-m
+
+tmux send-keys -t $name:0.2 'python3 ./capture.py' C-m
+
+# Attach
+tmux attach -t $name:0.0
