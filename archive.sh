@@ -1,12 +1,11 @@
 #!/usr/bin/bash
 
-mkdir -p ./archive
-cp -r ./camera_* ./archive/
-rm -rf ./camera_*
+mkdir -p ./cameras/archive
+cp -r ./cameras/camera_* ./cameras/archive/
+rm -rf ./cameras/camera_*
 
-cd archive
+cd ./cameras/archive
 
 tar -czf ./"$(date +%F-%T).tar.gz" ./camera_*
-zip -rq ./"$(date +%F-%T).zip" ./camera_*
 
 rm -rf ./camera_*

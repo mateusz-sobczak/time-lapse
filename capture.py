@@ -22,7 +22,7 @@ try:
         for i, camera in enumerate(cameras):
             ret, frame = camera.read()
             if ret:
-                folder_name = f"camera_{i}"
+                folder_name = f"./cameras/camera_{i}"
                 if not os.path.exists(folder_name):
                     os.makedirs(folder_name)
                 file_name = os.path.join(folder_name, f"{current_time}.jpg")
