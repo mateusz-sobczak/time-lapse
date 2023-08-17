@@ -11,7 +11,7 @@ chmod u+x ./tmux.Studio
 59 23 * * * /home/%USER%/archive.sh
 @reboot /home/%USER%/tmux.Studio
 ```
-4. Execute the tmux file
+4. Reboot or Execute the tmux file
 
 ```
 ./tmux.Studio
