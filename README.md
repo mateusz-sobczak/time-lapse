@@ -1,5 +1,10 @@
 1. Download the repo and store all files in `$HOME`
-2. Make all files executable
+2. Download prerequisites: tmux, cv2
+```
+sudo apt-get update
+sudo apt-get python3-opencv tmux
+```
+4. Make all files executable
 ```
 chmod u+x ./archive.sh
 chmod u+x ./capture.py
